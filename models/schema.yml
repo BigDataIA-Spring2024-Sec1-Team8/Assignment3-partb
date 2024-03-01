@@ -1,0 +1,58 @@
+models:
+  - name: URL_DATA
+    description: "A dbt model for topic details"
+    columns:
+      - name: name_of_the_topic
+        description: "Title of the topic"
+        tests:
+          - not_null
+      - name: Curriculum
+        description: "Curriculum information"
+      - name: Level
+        description: "Level of the topic"
+      - name: Topics
+        description: "Topics covered"
+      - name: Learning_Outcomes_Section
+        description: "Learning outcomes"
+      - name: Introduction
+        description: "Introduction to the topic"
+      - name: Summary_Bullets
+        description: "Summary bullets"
+      - name: pdf_link
+        description: "Link to PDF file"
+
+  - name: summary
+    description: "A dbt model combining topic details and learning outcomes"
+    columns:
+      - name: Level
+        description: "Level of the topic"
+        tests:
+          - not_null
+      - name: Topic
+        description: "Title of the topic"
+        tests:
+          - not_null
+      - name: Year
+        description: "Year of the topic"
+        tests:
+          - not_null
+      - name: Number_of_articles
+        description: "Number of articles related to the topic"
+        tests:
+          - not_null
+      - name: Min_Length_Summary
+        description: "Minimum length of the summary"
+        tests:
+          - not_null
+      - name: Max_Length_Summary
+        description: "Maximum length of the summary"
+        tests:
+          - not_null
+      - name: Min_Length_Learning_Outcomes
+        description: "Minimum length of learning outcomes"
+        tests:
+          - not_null
+      - name: Max_Length_Learning_Outcomes
+        description: "Maximum length of learning outcomes"
+        tests:
+          - not_null
